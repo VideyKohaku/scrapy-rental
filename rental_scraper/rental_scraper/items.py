@@ -11,21 +11,24 @@ class RentalScraperItem(scrapy.Item):
     # name = scrapy.Field()
     pass
 
-
 def extract_number(phone_str):
     pattern = r'\b\d*\b'
     return re.findall(pattern, phone_str)[2]
+
+def chagne_number_format(phone_str):
+    lst_num = phone_str.split(' ')
 
 def trim_string(text):
     return text.strip()
 
 class Rental_Item(scrapy.Item):
-    name = scrapy.Field
-    address = scrapy.Field
-    price = scrapy.Field
-    area = scrapy.Field
-    description = scrapy.Field
-    owner_name = scrapy.Field
-    owner_contact = scrapy.Field
-    post_date = scrapy.Field
-    prop_info_url = scrapy.Field
+    title = scrapy.Field()
+    address = scrapy.Field()
+    price = scrapy.Field()
+    area = scrapy.Field()
+    description = scrapy.Field()
+    owner_name = scrapy.Field()
+    owner_contact = scrapy.Field()
+    post_date = scrapy.Field()
+    prop_info_url = scrapy.Field()
+    real_estate_code = scrapy.Field()
